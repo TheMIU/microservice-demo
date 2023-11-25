@@ -1,0 +1,14 @@
+server:
+  port: 8081
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+spring:
+  application:
+    name: customer-service
+  datasource:
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/microservice-test?createDatabaseIfNotExist=true
