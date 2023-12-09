@@ -1,16 +1,14 @@
 package lk.ijse.orderservice.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 @RestController
 @RequestMapping("/order")
 public class OrderController {
     @GetMapping
-    public String get(){
+    public String get() {
         return "Orders get method invoked";
     }
 
@@ -25,5 +23,13 @@ public class OrderController {
 
         // post request ,,,
         // return restTemplate.postForObject("http://localhost:8082/app/order/save", User, ResponseUtil);
+    }
+
+    ////////////////////////
+    @PostMapping("/save")
+    public Customer getCustomer(@RequestBody Customer customer) {
+        System.out.println("invoked");
+        customer.setName("John");
+        return customer;
     }
 }
